@@ -39,4 +39,4 @@ GitHub Secrets에 `ANTHROPIC_API_KEY`를 설정하면
 매주 월요일 자동으로 새 글이 올라갑니다.
 
 ## 📞 문의
-hello@hisponsor.com
+roytry425@gmail.com
