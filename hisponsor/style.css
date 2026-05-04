@@ -1,0 +1,366 @@
+/* =============================================
+   HiSponsor - Main Stylesheet
+   수정하고 싶은 색상은 :root 안의 값만 바꾸면 됩니다!
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+:root {
+  /* 🎨 주요 색상 - 여기만 바꾸면 전체 색상이 바뀝니다 */
+  --primary: #0057FF;
+  --primary-dark: #0040CC;
+  --accent: #00C9A7;
+  --text-main: #1a1a2e;
+  --text-sub: #555577;
+  --bg: #f8f9ff;
+  --white: #ffffff;
+  --border: #e0e4f0;
+  --card-shadow: 0 4px 20px rgba(0,87,255,0.08);
+
+  /* 📐 간격 */
+  --nav-height: 68px;
+  --max-width: 1100px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans KR', 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* ===== 네비게이션 ===== */
+.nav {
+  position: fixed; top: 0; width: 100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex; align-items: center;
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  width: 100%; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 8px; list-style: none; }
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-sub);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+  background: rgba(0,87,255,0.08);
+}
+
+/* 햄버거 메뉴 (모바일) */
+.hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--text-main);
+  transition: all 0.3s;
+}
+
+/* ===== 공통 레이아웃 ===== */
+main { margin-top: var(--nav-height); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 80px 0; }
+
+.section-title {
+  font-size: 2rem; font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.section-sub {
+  color: var(--text-sub);
+  margin-bottom: 48px;
+  font-size: 1rem;
+}
+
+/* ===== 히어로 (Home) ===== */
+.hero {
+  background: linear-gradient(135deg, #0057FF 0%, #0040CC 50%, #00C9A7 100%);
+  color: white;
+  padding: 120px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero h1 {
+  font-size: 3.5rem; font-weight: 700;
+  line-height: 1.2; margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 1.2rem; opacity: 0.9;
+  margin-bottom: 40px;
+  max-width: 560px; margin-left: auto; margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s;
+  font-size: 1rem;
+  border: none; cursor: pointer;
+}
+
+.btn-white {
+  background: white;
+  color: var(--primary);
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===== 카드 ===== */
+.cards { display: grid; gap: 24px; }
+.cards-3 { grid-template-columns: repeat(3, 1fr); }
+.cards-2 { grid-template-columns: repeat(2, 1fr); }
+
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,87,255,0.12);
+}
+
+.card-icon {
+  font-size: 2rem; margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 1.15rem; font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card p { color: var(--text-sub); font-size: 0.92rem; }
+
+/* ===== 구인 목록 ===== */
+.job-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  transition: all 0.25s;
+}
+
+.job-item:hover {
+  border-color: var(--primary);
+  box-shadow: var(--card-shadow);
+}
+
+.job-info h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+
+.job-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem; font-weight: 500;
+}
+
+.tag-blue { background: rgba(0,87,255,0.1); color: var(--primary); }
+.tag-green { background: rgba(0,201,167,0.1); color: #00a086; }
+.tag-gray { background: #f0f0f5; color: var(--text-sub); }
+
+/* ===== 정보 게시판 ===== */
+.post-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-item:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.post-date {
+  min-width: 70px;
+  text-align: center;
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.post-date .day { font-size: 1.5rem; font-weight: 700; color: var(--primary); display: block; }
+.post-date .month { font-size: 0.75rem; color: var(--text-sub); }
+
+.post-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+.post-content p { font-size: 0.87rem; color: var(--text-sub); }
+
+/* ===== 문의 폼 ===== */
+.contact-form {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 48px;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  max-width: 640px;
+}
+
+.form-group { margin-bottom: 24px; }
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  background: white;
+  color: var(--text-main);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0,87,255,0.1);
+}
+
+.form-group textarea { height: 140px; resize: vertical; }
+
+/* ===== 푸터 ===== */
+footer {
+  background: var(--text-main);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 0.88rem;
+}
+
+footer a { color: var(--accent); text-decoration: none; }
+
+/* ===== 배지 ===== */
+.badge {
+  display: inline-block;
+  background: rgba(0,87,255,0.1);
+  color: var(--primary);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .cards-3 { grid-template-columns: 1fr; }
+  .cards-2 { grid-template-columns: 1fr; }
+  .job-item { flex-direction: column; align-items: flex-start; }
+  .nav-links { display: none; flex-direction: column; position: fixed;
+    top: var(--nav-height); left: 0; right: 0;
+    background: white; padding: 20px; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  .contact-form { padding: 28px 20px; }
+  .section-title { font-size: 1.6rem; }
+}

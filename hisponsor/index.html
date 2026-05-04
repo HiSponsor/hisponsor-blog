@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 🔧 사이트 제목 수정 -->
+  <title>HiSponsor - 스폰서십 & 취업 정보 플랫폼</title>
+  <meta name="description" content="HiSponsor - 최신 취업 정보와 스폰서십 기회를 한곳에서 확인하세요.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== 네비게이션 ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Hi<span>Sponsor</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="job.html">Job</a></li>
+        <li><a href="information.html">Information</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== 히어로 섹션 ===== -->
+    <section class="hero">
+      <div class="container hero-content">
+        <!-- 🔧 메인 문구 수정 -->
+        <div class="badge">🚀 새로운 기회를 찾고 있나요?</div>
+        <h1>스폰서십과 취업의<br>새로운 연결고리</h1>
+        <p>HiSponsor에서 최신 구인 정보와 유용한 취업 자료를 한곳에서 만나보세요. AI가 매주 자동으로 새로운 정보를 업데이트합니다.</p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+          <a href="job.html" class="btn btn-white">구인 정보 보기</a>
+          <a href="information.html" class="btn btn-outline" style="border-color:white; color:white;">유용한 정보</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 주요 기능 ===== -->
+    <section style="background: white;">
+      <div class="container">
+        <div style="text-align:center; margin-bottom:48px;">
+          <div class="badge">서비스 소개</div>
+          <h2 class="section-title">HiSponsor가 제공하는 것들</h2>
+          <p class="section-sub">취업 준비부터 스폰서십 연결까지, 필요한 모든 정보를 제공합니다.</p>
+        </div>
+        <div class="cards cards-3">
+          <!-- 🔧 카드 내용 수정 가능 -->
+          <div class="card">
+            <div class="card-icon">💼</div>
+            <h3>최신 구인 정보</h3>
+            <p>스폰서십을 제공하는 기업들의 최신 채용 공고를 실시간으로 확인하세요.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🤖</div>
+            <h3>AI 자동 업데이트</h3>
+            <p>인공지능이 매주 새로운 정보와 트렌드를 자동으로 정리해 게시합니다.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📚</div>
+            <h3>취업 준비 자료</h3>
+            <p>비자, 서류 준비, 인터뷰 팁 등 실질적인 정보를 무료로 제공합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 최신 공고 미리보기 ===== -->
+    <section>
+      <div class="container">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:32px;">
+          <div>
+            <div class="badge">최신 공고</div>
+            <h2 class="section-title" style="margin-bottom:0;">이번 주 주요 구인</h2>
+          </div>
+          <a href="job.html" class="btn btn-outline">전체 보기 →</a>
+        </div>
+
+        <!-- 🔧 공고 내용은 job.html에서 수정하세요 -->
+        <div class="job-item">
+          <div class="job-info">
+            <h3>글로벌 마케팅 매니저</h3>
+            <div class="job-meta">
+              <span class="tag tag-blue">풀타임</span>
+              <span class="tag tag-green">스폰서 가능</span>
+              <span class="tag tag-gray">서울</span>
+            </div>
+          </div>
+          <a href="job.html" class="btn btn-primary" style="white-space:nowrap;">지원하기</a>
+        </div>
+
+        <div class="job-item">
+          <div class="job-info">
+            <h3>소프트웨어 엔지니어 (백엔드)</h3>
+            <div class="job-meta">
+              <span class="tag tag-blue">풀타임</span>
+              <span class="tag tag-green">스폰서 가능</span>
+              <span class="tag tag-gray">재택 가능</span>
+            </div>
+          </div>
+          <a href="job.html" class="btn btn-primary" style="white-space:nowrap;">지원하기</a>
+        </div>
+
+        <div class="job-item">
+          <div class="job-info">
+            <h3>콘텐츠 크리에이터</h3>
+            <div class="job-meta">
+              <span class="tag tag-blue">파트타임</span>
+              <span class="tag tag-gray">경기도</span>
+            </div>
+          </div>
+          <a href="job.html" class="btn btn-primary" style="white-space:nowrap;">지원하기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 최신 정보 미리보기 ===== -->
+    <section style="background: white;">
+      <div class="container">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:32px;">
+          <div>
+            <div class="badge">최신 정보</div>
+            <h2 class="section-title" style="margin-bottom:0;">유용한 취업 정보</h2>
+          </div>
+          <a href="information.html" class="btn btn-outline">전체 보기 →</a>
+        </div>
+
+        <div class="cards cards-2">
+          <!-- 🔧 정보 카드 수정 가능 -->
+          <div class="card">
+            <div class="card-icon">📄</div>
+            <h3>비자 스폰서십 받는 법 완벽 가이드</h3>
+            <p style="margin-bottom:16px;">취업 비자를 받기 위해 꼭 알아야 할 서류와 프로세스를 단계별로 정리했습니다.</p>
+            <a href="information.html" style="color:var(--primary); font-weight:600; font-size:0.9rem;">자세히 보기 →</a>
+          </div>
+          <div class="card">
+            <div class="card-icon">💡</div>
+            <h3>스폰서 기업 찾는 5가지 방법</h3>
+            <p style="margin-bottom:16px;">실제로 효과적인 스폰서 기업 발굴 전략과 접근 방법을 공유합니다.</p>
+            <a href="information.html" style="color:var(--primary); font-weight:600; font-size:0.9rem;">자세히 보기 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color:white; text-align:center;">
+      <div class="container">
+        <h2 style="font-size:2rem; margin-bottom:16px;">문의사항이 있으신가요?</h2>
+        <p style="opacity:0.9; margin-bottom:32px;">언제든지 연락주세요. 빠르게 답변드리겠습니다.</p>
+        <a href="contact.html" class="btn btn-white">문의하기</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 푸터 ===== -->
+  <!-- 🔧 푸터 정보 수정 -->
+  <footer>
+    <p>© 2025 <strong style="color:white;">HiSponsor</strong>. All rights reserved.</p>
+    <p style="margin-top:8px;">Made with ❤️ | <a href="contact.html">문의하기</a></p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

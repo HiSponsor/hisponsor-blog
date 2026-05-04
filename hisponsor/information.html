@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정보 - HiSponsor</title>
+  <meta name="description" content="취업 비자, 스폰서십 관련 유용한 정보">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .post-full {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .post-header {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 20px;
+    }
+    .post-body {
+      padding: 28px 32px;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .post-body.open { max-height: 2000px; }
+    .post-body p { color: var(--text-sub); margin-bottom: 12px; font-size:0.95rem; }
+    .post-body ul { padding-left: 20px; color: var(--text-sub); font-size:0.95rem; }
+    .post-body li { margin-bottom: 8px; }
+    .toggle-btn {
+      background: none; border: none;
+      color: var(--primary); font-weight: 600;
+      cursor: pointer; font-size: 0.9rem;
+      padding: 0; margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Hi<span>Sponsor</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="job.html">Job</a></li>
+        <li><a href="information.html" class="active">Information</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section style="background:white; padding:60px 0 40px; border-bottom:1px solid var(--border);">
+      <div class="container">
+        <div class="badge">📚 정보 게시판</div>
+        <h1 class="section-title">유용한 정보</h1>
+        <p class="section-sub" style="margin-bottom:0;">취업, 비자, 스폰서십에 관한 실용적인 정보를 공유합니다. AI가 자동으로 최신 정보를 업데이트합니다.</p>
+      </div>
+    </section>
+
+    <!-- 카테고리 탭 -->
+    <section style="background:white; padding:20px 0; border-bottom:1px solid var(--border);">
+      <div class="container" style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-primary" style="padding:7px 18px; font-size:0.85rem;">전체</button>
+        <button class="btn btn-outline" style="padding:7px 18px; font-size:0.85rem;">비자 정보</button>
+        <button class="btn btn-outline" style="padding:7px 18px; font-size:0.85rem;">취업 팁</button>
+        <button class="btn btn-outline" style="padding:7px 18px; font-size:0.85rem;">스폰서십</button>
+        <button class="btn btn-outline" style="padding:7px 18px; font-size:0.85rem;">뉴스</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <!-- ============================================
+             🔧 아래 post-full 블록을 복사하여 글을 추가하세요
+             AI 자동 포스팅도 이 형식으로 추가됩니다
+             ============================================ -->
+
+        <div class="post-full">
+          <div class="post-header">
+            <div class="post-date">
+              <span class="day">07</span>
+              <span class="month">JAN 2025</span>
+            </div>
+            <div style="flex:1;">
+              <div style="margin-bottom:8px;">
+                <span class="tag tag-blue">비자 정보</span>
+              </div>
+              <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">비자 스폰서십 받는 법 완벽 가이드 2025</h3>
+              <p style="font-size:0.88rem; color:var(--text-sub);">취업 비자를 받기 위해 꼭 알아야 할 서류와 프로세스를 단계별로 정리했습니다.</p>
+              <button class="toggle-btn" onclick="togglePost(this)">자세히 보기 ▼</button>
+            </div>
+          </div>
+          <div class="post-body">
+            <!-- 🔧 글 내용 수정 -->
+            <p><strong>스폰서십 비자란 무엇인가요?</strong></p>
+            <p>기업이 외국인 직원의 취업 비자를 보증해주는 제도입니다. 한국에서는 E-7 비자가 대표적이며, 고용주가 법무부에 직접 신청합니다.</p>
+            <p><strong>필요 서류 체크리스트:</strong></p>
+            <ul>
+              <li>고용계약서 (영문/국문 각 1부)</li>
+              <li>최종 학력 증명서 (공증 필요)</li>
+              <li>경력 증명서</li>
+              <li>여권 사본</li>
+              <li>고용 기업 사업자등록증</li>
+            </ul>
+            <p><strong>처리 기간:</strong> 평균 2~4주 소요. 서류 미비 시 추가 기간 발생.</p>
+            <p style="margin-top:16px;">더 자세한 내용은 <a href="contact.html" style="color:var(--primary);">문의</a>를 통해 확인하세요.</p>
+          </div>
+        </div>
+
+        <div class="post-full">
+          <div class="post-header">
+            <div class="post-date">
+              <span class="day">05</span>
+              <span class="month">JAN 2025</span>
+            </div>
+            <div style="flex:1;">
+              <div style="margin-bottom:8px;">
+                <span class="tag tag-green">취업 팁</span>
+              </div>
+              <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">스폰서 기업 찾는 5가지 실전 방법</h3>
+              <p style="font-size:0.88rem; color:var(--text-sub);">실제로 효과적인 스폰서 기업 발굴 전략과 접근 방법을 공유합니다.</p>
+              <button class="toggle-btn" onclick="togglePost(this)">자세히 보기 ▼</button>
+            </div>
+          </div>
+          <div class="post-body">
+            <ul>
+              <li><strong>링크드인 활용:</strong> "visa sponsorship" 키워드로 필터링하여 검색</li>
+              <li><strong>잡코리아/사람인:</strong> 외국인 채용 가능 필터 사용</li>
+              <li><strong>외국계 기업 직접 접촉:</strong> 한국 진출 다국적 기업 HR 직접 이메일</li>
+              <li><strong>네트워킹:</strong> 업계 행사, 미트업 참가로 내부 추천 활용</li>
+              <li><strong>헤드헌터 활용:</strong> 외국인 채용 전문 헤드헌팅 업체 등록</li>
+            </ul>
+            <p style="margin-top:12px;">가장 효과적인 방법은 직접 네트워킹입니다. 한국의 채용 시장은 내부 추천이 큰 비중을 차지합니다.</p>
+          </div>
+        </div>
+
+        <div class="post-full">
+          <div class="post-header">
+            <div class="post-date">
+              <span class="day">03</span>
+              <span class="month">JAN 2025</span>
+            </div>
+            <div style="flex:1;">
+              <div style="margin-bottom:8px;">
+                <span class="tag tag-gray">뉴스</span>
+              </div>
+              <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:6px;">2025년 외국인 고용 정책 변경사항 정리</h3>
+              <p style="font-size:0.88rem; color:var(--text-sub);">올해 달라지는 외국인 채용 관련 규정과 주의사항을 확인하세요.</p>
+              <button class="toggle-btn" onclick="togglePost(this)">자세히 보기 ▼</button>
+            </div>
+          </div>
+          <div class="post-body">
+            <!-- 🔧 내용 수정 -->
+            <p>2025년부터 E-7 비자 쿼터가 확대되어 더 많은 외국인 전문인력 채용이 가능해졌습니다.</p>
+            <p>주요 변경사항:</p>
+            <ul>
+              <li>IT 분야 전문인력 비자 쿼터 30% 확대</li>
+              <li>최저 연봉 요건 조정 (직종별 상이)</li>
+              <li>온라인 신청 시스템 전면 개편</li>
+            </ul>
+            <p>정확한 내용은 법무부 출입국·외국인정책본부 공식 사이트를 확인하세요.</p>
+          </div>
+        </div>
+
+        <!-- AI 자동 포스팅 글이 여기에 추가됩니다 -->
+        <!-- 예: posts/ 폴더의 내용이 여기에 삽입됩니다 -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 <strong style="color:white;">HiSponsor</strong>. All rights reserved.</p>
+    <p style="margin-top:8px;"><a href="contact.html">문의하기</a></p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    function togglePost(btn) {
+      const body = btn.closest('.post-full').querySelector('.post-body');
+      body.classList.toggle('open');
+      btn.textContent = body.classList.contains('open') ? '접기 ▲' : '자세히 보기 ▼';
+    }
+  </script>
+
+</body>
+</html>
